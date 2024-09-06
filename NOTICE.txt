@@ -1,4 +1,5 @@
-Code for Google's Python Class
+Code for Google's Python Class 
+https://developers.google.com/edu/python/set-up?hl=ru
 Copyright 2010 Google Inc.
 
 This code developed by Nick Parlante

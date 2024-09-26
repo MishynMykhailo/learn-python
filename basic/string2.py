@@ -1,3 +1,4 @@
+import math
 #!/usr/bin/python3
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -33,12 +34,11 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
+  print(s)
   not_index = s.find('not')
   bad_index = s.find('bad')
-  print(not_index,bad_index)
   if not_index!= -1 and bad_index != -1 and bad_index > not_index:
-    print(f'{s[:not_index]}')
-    return f'{s[:not_index].strip()} good'
+    return f'{s[:not_index]}good{s[bad_index + len('bad'):]}'
 
   return s
 
@@ -51,8 +51,21 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-  # +++your code here+++
-  return
+  # находим длину строк
+  length_a = len(a)
+  length_b = len(b)
+  # Находим середины строк
+  middleA = math.ceil(length_a/2)
+  middleB = math.ceil(length_b/2)
+  # Определяем передние и задние части
+  front_a = a[:middleA]
+  front_b = b[:middleB]
+  back_a = a[middleA:]
+  back_b = b[middleB:]
+
+  result = f'{front_a+front_b+back_a+back_b}'
+
+  return result
 
 
 # Simple provided test() function used in main() to print

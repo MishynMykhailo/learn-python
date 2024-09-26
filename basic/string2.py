@@ -8,16 +8,20 @@
 
 # Additional basic string exercises
 
-# D. verbing
-# Given a string, if its length is at least 3,
-# add 'ing' to its end.
-# Unless it already ends in 'ing', in which case
-# add 'ly' instead.
-# If the string length is less than 3, leave it unchanged.
-# Return the resulting string.
+  # D. verbing
+  # Given a string, if its length is at least 3,
+  # add 'ing' to its end.
+  # Unless it already ends in 'ing', in which case
+  # add 'ly' instead.
+  # If the string length is less than 3, leave it unchanged.
+  # Return the resulting string.
 def verbing(s):
-  # +++your code here+++
-  return
+  if len(s) >=3:
+    if s.endswith('ing'):
+      return f'{s}ly'
+    else:
+      return f'{s}ing'
+  return s
 
 
 # E. not_bad
@@ -29,8 +33,14 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
-  # +++your code here+++
-  return
+  not_index = s.find('not')
+  bad_index = s.find('bad')
+  print(not_index,bad_index)
+  if not_index!= -1 and bad_index != -1 and bad_index > not_index:
+    print(f'{s[:not_index]}')
+    return f'{s[:not_index].strip()} good'
+
+  return s
 
 
 # F. front_back

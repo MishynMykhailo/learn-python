@@ -37,9 +37,18 @@ def match_ends(words):
 # Hint: this can be done by making 2 lists and sorting each of them
 # before combining them.
 def front_x(words):
-  sorted_words = sorted(words,key=personal_x_sort)
-  print(sorted_words)
-  return
+  first_list = []
+  second_list = []
+  result = []
+  for word in words:
+    if word[0] == 'x':
+      first_list.append(word)
+    else:
+      second_list.append(word)
+  
+  result.extend(sorted(first_list))
+  result.extend(sorted(second_list))
+  return result
 
 # C. sort_last
 # Given a list of non-empty tuples, return a list sorted in increasing
